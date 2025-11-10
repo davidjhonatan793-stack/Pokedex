@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="nav">
+            <div class="logo-container">
+                <h1 class="logo-text">🎮 POKEDEX</h1>
+                <!-- barra de busqueda -->
+                <!-- campo de busqueda para filtrar Pokemon por nombre en tiempo real -->
+                <div class="search-container">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar Pokémon por nombre..."
+                        autocomplete="off">
+                </div>
+            </div>
+            <img src="logo.png" alt="Logo Pokédex">
+            <ul class="nav-list">
+                <li class="nav-item"><button class="btn btn-header" id="ver-todos" data-type="ver-todos">Ver
+                        todos</button></li>
+                <li class="nav-item"><button class="btn btn-header normal" id="normal"
+                        data-type="normal">Normal</button></li>
+                <li class="nav-item"><button class="btn btn-header fire" id="fire" data-type="fire">Fire</button></li>
+                <li class="nav-item"><button class="btn btn-header water" id="water" data-type="water">Water</button>
+                </li>
+                <li class="nav-item"><button class="btn btn-header grass" id="grass" data-type="grass">Grass</button>
+                </li>
+                <li class="nav-item"><button class="btn btn-header electric" id="electric"
+                        data-type="electric">Electric</button></li>
+                <li class="nav-item"><button class="btn btn-header ice" id="ice" data-type="ice">Ice</button></li>
+                <li class="nav-item"><button class="btn btn-header fighting" id="fighting"
+                        data-type="fighting">Fighting</button></li>
+                <li class="nav-item"><button class="btn btn-header poison" id="poison"
+                        data-type="poison">Poison</button></li>
+                <li class="nav-item"><button class="btn btn-header ground" id="ground"
+                        data-type="ground">Ground</button></li>
+                <li class="nav-item"><button class="btn btn-header flying" id="flying"
+                        data-type="flying">Flying</button></li>
+                <li class="nav-item"><button class="btn btn-header psychic" id="psychic"
+                        data-type="psychic">Psychic</button></li>
+                <li class="nav-item"><button class="btn btn-header bug" id="bug" data-type="bug">Bug</button></li>
+                <li class="nav-item"><button class="btn btn-header rock" id="rock" data-type="rock">Rock</button></li>
+                <li class="nav-item"><button class="btn btn-header ghost" id="ghost" data-type="ghost">Ghost</button>
+                </li>
+                <li class="nav-item"><button class="btn btn-header dark" id="dark" data-type="dark">Dark</button></li>
+                <li class="nav-item"><button class="btn btn-header dragon" id="dragon"
+                        data-type="dragon">Dragon</button></li>
+                <li class="nav-item"><button class="btn btn-header steel" id="steel" data-type="steel">Steel</button>
+                </li>
+                <li class="nav-item"><button class="btn btn-header fairy" id="fairy" data-type="fairy">Fairy</button>
+                </li>
+                <li class="nav-item"><button class="btn btn-header favorite" id="favorite" data-type="favorite">favorite</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!--indicador de carga-->
+        <div id="loadingIndicator" class="loading-indicator">
+            <div class="pokeball-loader"></div>
+            <p>>Cargando Pokémon...</p>
+        </div>
+
+        <!-- mensaje de informacion cuando se muestran favoritos o resultados de busqueda -->
+        <div id="infoMessage" class="info-message" style="display: none;"></div>
+
+        <div id="todos">
+            <div class="pokemon-todos" id="listaPokemon"></div>
+        </div>
+
+        <!--mensaje cuando no hay resultados-->
+        <div id="noResults" class="no-results" style="display: none;">
+            <p id="noResultsText">No se encontraron Pokémon</p>
+        </div>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
